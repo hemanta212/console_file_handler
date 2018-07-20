@@ -6,7 +6,6 @@ class file:
         self.filename = filename
         try:
             self.name, self.ext =self.filename.split(".")
-            
         except:
             self.name = self.filename
             self.ext = "txt"
@@ -25,15 +24,21 @@ class file:
             print("file doesnot exists in the folder")
             
     @staticmethod 
-    def open(file):
-        if exists(file):
-            print("                               Status: EDITING!!  || ",file,"  | ",len(file),"||")
-            with open(file,'r') as fr:
+    def open(filename):
+        if exists(filename):
+            print("                               Status: EDITING!!  ||",filename,"  | ",len(filename),"||")
+            with open(filename,'r') as fr:
                 print(fr.read())
                 print()
-                with open(file, "a") as fw:
+                with open(filename, "a") as fw:
                     print("                      any thing you write will be appedded after pressing enter")
                     content = input()
+                    print(len(content))
+                    if filename == tdate() + ".txt" or filename == ".txt":
+                        if len(content) >=4:
+                            word_list = content.split(" ")
+                            new_file_name = word_list[0] +".txt" 
+                            file.rename(filename,new_file_name)
                     fw.write(content) 
         else:
             print("file doesnot exists")

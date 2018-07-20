@@ -8,8 +8,10 @@ def runner():
     if args[0]== "create":
         if len(args) == 1: 
             file()
-        elif len(args) == 2:
+        elif len(args) == 2 and args[1]!= " " and args[1] != "":
             file(args[1])
+        else:
+            file()
 
     elif len(args) == 2 and  args[0] == "delete":
         file.delete(args[1])
@@ -23,8 +25,11 @@ def runner():
 
     print("                      press q to quit other to restart!              ")
     prompt = input().lower()
-    if prompt == "q":
-        sys.exit()
+    try:
+    	if prompt == "q":
+        	sys.exit()
+    except:
+    	sys.exit()
     else:
         runner()
 
