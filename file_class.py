@@ -19,7 +19,6 @@ class file:
     @staticmethod
     def rename(old,new):
         if exists(old):
-            print("file exists now renaming")
             os.rename(old, new)
             print("file renamed")
         else:
