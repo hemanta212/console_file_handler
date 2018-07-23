@@ -1,7 +1,11 @@
 import os
 from utilities import tdate, exists
 
+
 class file:
+    '''A class use for creating file
+
+    input:filename(optional) creates a file in docs dir.'''
     def __init__(self,filename=tdate()):
         self.filename = filename
         try:
@@ -17,6 +21,10 @@ class file:
 
     @staticmethod
     def rename(old,new):
+        ''' Renames a file if it exists (in docs folder)
+
+        input: old filename, new filename '''
+
         if exists(old):
             os.rename(old, new)
             print("file renamed")
@@ -25,6 +33,9 @@ class file:
             
     @staticmethod 
     def open(filename):
+        ''' opens a file for appending if exists in docs folder
+
+        input:existing filename'''
         if exists(filename):
             print("                               Status: EDITING!!  ||",filename,"  | ",len(filename),"||")
             with open(filename,'r') as fr:
@@ -45,6 +56,9 @@ class file:
     
     @staticmethod
     def delete(file):
+        '''Delete a file if exists (in docs folder)
+
+        input:filename''' 
         if exists(file):
             os.remove(file)
             print("file deleted")
