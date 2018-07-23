@@ -1,7 +1,6 @@
 import os
 from utilities import tdate, exists
 
-
 class file:
     '''A class use for creating file
 

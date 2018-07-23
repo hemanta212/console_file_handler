@@ -1,5 +1,6 @@
 import os
 import datetime as dt 
+
 def exists(file):
     '''checks if a file exists (in docs folder)
 
