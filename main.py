@@ -5,7 +5,7 @@ import os
 #moving to the dir from where this file is running.
 curfile = os.path.realpath(__file__)
 curdir = str(os.path.dirname(curfile))
-print(curdir)
+#print(curdir)
 #making a folder for storing files.
 docs = curdir + "/docs/"
 try:
